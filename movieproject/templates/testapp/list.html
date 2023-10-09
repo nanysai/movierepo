@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet" href="{% static 'css/movie.css' %}">
+</head>
+<body>
+  <div class="container" align="center">
+      <h1>list of movies</h1>
+      {% if obj %}
+      <table border="3">
+          <thead>
+          <th>mname</th>
+          <th>hero</th>
+          <th>heroin</th>
+          <th>rating</th>
+          </thead>
+          {% for m in obj %}
+          <tr>
+               <td>{{ m.mname }}</td>
+               <td>{{ m.hero }}</td>
+               <td>{{ m.heroin }}</td>
+               <td>{{ m.rating }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+      {% endif %}
+  </div>
+</body>
+</html>
